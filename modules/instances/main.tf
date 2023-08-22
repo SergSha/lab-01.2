@@ -34,7 +34,7 @@ resource "yandex_compute_instance" "instances" {
   metadata = {
     ssh-keys           = "${local.user}:${file(local.ssh_public_key)}"
   }
-
+/*
   provisioner "remote-exec" {
     inline = ["echo 'Wait until SSH is ready'"]
 
@@ -49,6 +49,7 @@ resource "yandex_compute_instance" "instances" {
   provisioner "local-exec" {
     command = "ansible-playbook -u '${local.user}' --private-key '${local.ssh_private_key}' --become -i '${self.network_interface[0].nat_ip_address},' provision.yml"
   }
+*/
 }
 /*
 resource "local_file" "inventory_file" {
