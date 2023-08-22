@@ -3,5 +3,6 @@
 #}
 
 output "vm_name" {
-  value = yandex_compute_instance.instances[*].name
+  value = var.vm_name
+  #value = yandex_compute_instance.instances[*].name
 }

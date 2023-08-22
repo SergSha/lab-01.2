@@ -50,6 +50,7 @@ resource "local_file" "inventory_file" {
   content = templatefile("${path.module}/templates/inventory.tpl",
     {
       masters = module.masters
+      nodes   = module.nodes
     }
   )
   filename = "./inventory.ini"
